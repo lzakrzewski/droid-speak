@@ -1,0 +1,29 @@
+services:
+	-
+		class: PHPStan\Rules\StrictCalls\StrictFunctionCallsRule
+		tags:
+			- phpstan.rules.rule
+	-
+		class: PHPStan\Rules\Properties\MissingPropertyTypehintRule
+		tags:
+			- phpstan.rules.rule
+	-
+		class: PHPStan\Rules\Methods\MissingMethodReturnTypehintRule
+		tags:
+			- phpstan.rules.rule
+	-
+		class: PHPStan\Rules\Methods\WrongCaseOfInheritedMethodRule
+		tags:
+			- phpstan.rules.rule
+	-
+		class: PHPStan\Rules\Functions\MissingFunctionParameterTypehintRule
+		tags:
+			- phpstan.rules.rule
+	-
+		class: PHPStan\Rules\Functions\MissingFunctionReturnTypehintRule
+		tags:
+			- phpstan.rules.rule
+	-
+		class: PHPStan\Rules\DisallowedConstructs\DisallowedImplicitArrayCreationRule
+		tags:
+			- phpstan.rules.rule
