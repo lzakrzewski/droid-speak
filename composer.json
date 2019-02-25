@@ -38,6 +38,11 @@
             "@cs-fixer",
             "@static-analysis",
             "@tests-unit"
+        ],
+        "tests-ci": [
+            "@cs-fixer-ci",
+            "@static-analysis",
+            "@tests-unit"
         ]
     }
 }
