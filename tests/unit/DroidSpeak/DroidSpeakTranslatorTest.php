@@ -11,18 +11,18 @@ use PHPUnit\Framework\TestCase;
 class DroidSpeakTranslatorTest extends TestCase
 {
     /** @var DroidSpeakTranslator */
-    private $processor;
+    private $translator;
 
     /** @test */
-    public function it_can_process_empty_input(): void
+    public function it_can_translate_empty_input(): void
     {
-        $this->assertEmpty($this->processor->translate([]));
+        $this->assertEmpty($this->translator->translate([]));
     }
 
     /** @test @dataProvider inputs */
     public function it_can_translate_multiple_inputs(array $expectedOutput, array $input): void
     {
-        $this->assertEquals($expectedOutput, $this->processor->translate($input));
+        $this->assertEquals($expectedOutput, $this->translator->translate($input));
     }
 
     public function inputs(): array
@@ -70,11 +70,11 @@ class DroidSpeakTranslatorTest extends TestCase
     {
         $this->expectException(CanNotTranslateInputException::class);
 
-        $this->processor->translate(['01000011xyz']);
+        $this->translator->translate(['01000011xyz']);
     }
 
     protected function setUp(): void
     {
-        $this->processor = new DroidSpeakTranslator();
+        $this->translator = new DroidSpeakTranslator();
     }
 }
